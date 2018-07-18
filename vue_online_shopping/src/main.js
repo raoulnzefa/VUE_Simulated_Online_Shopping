@@ -2,13 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-// import router from './router'
 import routes from './router.config'
 import axios from  'axios'
 import VueLazyload from 'vue-lazyload'
 import './assets/font/iconfont.css'
 import './assets/css/base.css'
-import VueRouter from '../node_modules/vue-router';
+import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>Online shopping</h1>
-    <router-view/>
+    <!-- Rendered content  -->
+    <router-view></router-view>
+    <!-- Nav at the bottom -->
+    <NavBottom/>
   </div>
 </template>
 
@@ -23,12 +24,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/css/index.css'
 </style>
