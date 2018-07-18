@@ -4,6 +4,7 @@ import  Find from './components/Find'
 import  Carter from './components/Carter'
 import  Mine from './components/Mine'
 import  ItemtDetail from './components/ItemDetail'
+import  SearchMain from './components/SearchMain'
 
 export default[
     {
@@ -40,5 +41,9 @@ export default[
     {
         path :'/detail/:id',
         component: ItemtDetail
+    },
+    {
+        path:'/search',
+        component: SearchMain
     }
 ]

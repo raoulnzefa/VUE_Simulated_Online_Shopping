@@ -20,6 +20,12 @@ export default {
         return {
 
         }
+    },
+
+    methods: {
+        goSearch(){
+            this.$router.push('/search');
+        }
     }
 }
 </script>
