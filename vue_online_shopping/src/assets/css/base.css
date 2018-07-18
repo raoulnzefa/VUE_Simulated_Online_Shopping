@@ -3,7 +3,7 @@
 ::after {
     padding: 0;
     margin: 0;
-    /*去掉chorm浏览器中默认点击的颜色*/
+    /*Get rid of default click color in Chrome browser*/
     -webkit-tap-highlight-color: transparent;
     -webkit-box-sizing: border-box;
 }

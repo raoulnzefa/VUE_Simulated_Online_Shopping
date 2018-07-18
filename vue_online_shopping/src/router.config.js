@@ -11,29 +11,29 @@ export default[
     },
     {
         path :'/',
-        component : Home
+        redirect : '/home'
     },
     {
         path :'*',
-        component : Home
+        redirect : '/home'
     },
 
     {
         path :'/category',
-        component : Category
+        redirect : Category
     },
 
     {
         path :'/find',
-        component : Find
+        redirect : Find
     },
 
     {
         path :'/cart',
-        component : Carter
+        redirect : Carter
     },
     {
         path :'/mine',
-        component : Mine
+        redirect : Mine
     }
 ]

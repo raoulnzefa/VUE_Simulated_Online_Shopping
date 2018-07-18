@@ -15,9 +15,20 @@ const router = new VueRouter({
     routes
 })
 
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: require('./assets/images/err.png') ,
+  loading: require('./assets/images/loading.gif'),
+  attempt: 3,
+  listenEvents: ['scroll']
+  
+});
 
 Vue.config.productionTip = false  //Stop production tips
 
+axios.defaults.baseURL = 'http://127.0.0.1:3333'
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+Vue.prototype.$http = axios; // Define a global variable $http as axios.
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
