@@ -3,6 +3,7 @@ import  Category from './components/Category'
 import  Find from './components/Find'
 import  Carter from './components/Carter'
 import  Mine from './components/Mine'
+import  ItemtDetail from './components/ItemDetail'
 
 export default[
     {
@@ -20,20 +21,24 @@ export default[
 
     {
         path :'/category',
-        redirect : Category
+        component : Category
     },
 
     {
         path :'/find',
-        redirect : Find
+        component : Find
     },
 
     {
         path :'/cart',
-        redirect : Carter
+        component : Carter
     },
     {
         path :'/mine',
-        redirect : Mine
+        component : Mine
+    },
+    {
+        path :'/detail/:id',
+        component: ItemtDetail
     }
 ]

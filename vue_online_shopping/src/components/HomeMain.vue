@@ -13,7 +13,7 @@
                         <ul>
                         
                             <li class="product_skill_item" v-for="item in homeData">
-                                <a class="product_skill_item_link">
+                                <router-link :to="'/detail/'+item.product_id" class="product_skill_item_link">
                                     <img v-lazy="item.product_img_url" alt="" class="product_skill_item_cion lazy-img-fadein">
                                     <p class="nowprice">
                                         <i style="text-decoration: none;font-style: normal;font-size: 12px">$</i>
@@ -23,7 +23,7 @@
                                         <i style="text-decoration: none;font-style: normal;font-size: 12px">$</i>
                                         <del class="old_price">{{item.product_price}}</del>
                                     </p>
-                                </a>
+                                </router-link>
                             </li>
                         
                         </ul>
