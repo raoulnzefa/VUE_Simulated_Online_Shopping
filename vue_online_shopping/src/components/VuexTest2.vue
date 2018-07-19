@@ -1,9 +1,6 @@
 <template>
     <div>
-        
-        <button @click="() => this.$router.push('/vuexTest1')">click</button>
-        this.$router.push('/search')
-        
+        <div>{{$store.state}}</div>
     </div>
 </template>
 
@@ -19,7 +16,9 @@ export default {
         
     },
     methods:{
-       
+        change(){
+            this.$store.state.flag = 'changed flag';
+        }
     }
 }
 </script>

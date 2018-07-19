@@ -5,6 +5,8 @@ import  Carter from './components/Carter'
 import  Mine from './components/Mine'
 import  ItemtDetail from './components/ItemDetail'
 import  SearchMain from './components/SearchMain'
+import  VuexTest1 from './components/VuexTest1'
+import  VuexTest2 from './components/VuexTest2'
 
 export default[
     {
@@ -45,5 +47,14 @@ export default[
     {
         path:'/search',
         component: SearchMain
+    },
+    {
+        path : '/vuexTest1',
+        component: VuexTest1
+    },
+
+    {
+        path : '/vuexTest2',
+        component: VuexTest2
     }
 ]
