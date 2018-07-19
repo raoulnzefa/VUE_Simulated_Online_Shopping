@@ -8,12 +8,21 @@ import VueLazyload from 'vue-lazyload'
 import './assets/font/iconfont.css'
 import './assets/css/base.css'
 import VueRouter from 'vue-router';
+// import Vuex from 'vuex'
+import store from './store/index'
 
 Vue.use(VueRouter);
+// Vue.use(Vuex);
 
 const router = new VueRouter({
     routes
 })
+
+// const store =  new Vuex.Store({
+//   state:{
+//     flag:'123'
+//   }
+// })
 
 Vue.use(VueLazyload, {
   preLoad: 1.3,
@@ -33,6 +42,7 @@ Vue.prototype.$http = axios; // Define a global variable $http as axios.
 new Vue({
   el: '#app',
   router,
+  store,
   //1.0 style
   // components: { App },
   // template: '<App/>'

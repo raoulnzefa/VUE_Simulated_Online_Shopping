@@ -1,6 +1,6 @@
 <template>
     <div>
-        Find
+        Find, {{$store.state.flag}}
     </div>
 </template>
 
