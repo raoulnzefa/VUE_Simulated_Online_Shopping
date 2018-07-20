@@ -1,7 +1,8 @@
 import  Home from './components/Home'
 import  Category from './components/Category'
 import  Find from './components/Find'
-import  Carter from './components/Carter'
+// import  Cart from './components/Cart'
+import  Cart from './components/Carter'
 import  Mine from './components/Mine'
 import  ItemtDetail from './components/ItemDetail'
 import  SearchMain from './components/SearchMain'
@@ -34,7 +35,7 @@ export default[
 
     {
         path :'/cart',
-        component : Carter
+        component : Cart
     },
     {
         path :'/mine',

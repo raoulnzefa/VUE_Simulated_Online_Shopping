@@ -46,7 +46,8 @@ export default {
         $route(to){
             console.log("watch",to.path);
             // this.getData(this.$route.params.id);
-            let reg = /\/category\/\d+/;
+            //Need to identify the type of route just is just the rout on the page.
+            let reg = /\/category\/\d+/; 
             let regTest = reg.test(to.path);
             // debugger;
             if(regTest){
