@@ -22,5 +22,6 @@ export default {
 }
 </script>
 <style>
+    /* @import '../assets/css/detail.css'; */
     @import '../assets/css/cart.css';
 </style>

@@ -104,29 +104,27 @@ export default {
                 console.log(err);
             })
         },
-
-        //  //轮播
-        // autoPlay:function(){
-        //     this.num ++;
-        //     if(this.num == this.goodsImages.length){   //已经是最后一张
-        //         this.num = 0;
-        //     }
-        // },
-        // play:function(){
-        //     setInterval(this.autoPlay,2000)
-        // }
-
-        
-
+     
+        //Slideshow
         autoPlay: function(){
-            this.num++;
-            if(this.num == this.goodsImages.length){ //When come to the last pics
-                this.num =0;
-            }
+        this.num++;
+        if(this.num == this.goodsImages.length){ //When come to the last pics
+            this.num =0;
+        }
         },
 
         play: function(){
             setInterval(this.autoPlay,2000)
+        },
+
+        //Add the item to cart
+        addToCart: function(){
+            //Deep copy item detail to a variable
+            // debugger;
+            var cartData = JSON.parse(JSON.stringify(this.goodsData[0]));
+            cartData.item_num = 1;
+            this.$store.dispatch('cartAdd', cartData); // Save adding item to store
+            this.$router.push('/cart'); //Jump to cart page
         }
 
     }

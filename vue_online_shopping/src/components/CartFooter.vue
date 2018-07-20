@@ -1,6 +1,6 @@
 <template>
-    <div>
-        Cart footer
+    <div class="car_fo">
+        
         
     </div>
 </template>
