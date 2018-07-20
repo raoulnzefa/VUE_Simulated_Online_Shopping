@@ -1,14 +1,18 @@
 <template>
-    <div>
+    <div>        
+        <!-- this button is for exercising for vuex -->
+        <!-- <button @click="() => this.$router.push('/vuexTest1')">click</button> -->
+        <CategoryHead></CategoryHead>
+        <CategoryMain></CategoryMain>
+
         
-        <button @click="() => this.$router.push('/vuexTest1')">click</button>
-        this.$router.push('/search')
         
     </div>
 </template>
 
 <script>
-
+import CategoryHead from './CategoryHead';
+import CategoryMain from './CategoryMain'
 export default {
     data() {
         return {
@@ -16,10 +20,14 @@ export default {
         }
     },
     components: {
-        
+        CategoryHead,
+        CategoryMain
     },
     methods:{
        
     }
 }
 </script>
+<style>
+    @import '../assets/css/category.css';
+</style>

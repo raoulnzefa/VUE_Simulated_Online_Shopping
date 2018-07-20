@@ -56,5 +56,9 @@ export default[
     {
         path : '/vuexTest2',
         component: VuexTest2
+    },
+    {
+        path : '/category/:id',
+        component: Category
     }
 ]
