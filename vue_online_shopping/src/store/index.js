@@ -30,7 +30,7 @@ var getters = {
 
     //For cart
     cartData(state){
-        cache:false;
+        // cache:false;
         return state.addCartData;
     }
 };
@@ -99,18 +99,18 @@ const mutations = {
     //Mutations for Cartmanagement
     cartAdd:(state,data) => {
         console.log('length of AddCartData: ',state.addCartData.length)
-        // if (state.addCartData.length.length > 0){
-        //     let item = state.addCartData.filter(function(item){return item.product_id == data.product_id})[0];
-        //     if (item){
-        //         item.item_num++
-        //     } else {
-        //         state.addCartData.push(data);
-        //     }
-        // } else {
-        //     state.addCartData.push(data);
-        // }
+        if (state.addCartData.length.length > 0){
+            let item = state.addCartData.filter(function(item){return item.product_id == data.product_id})[0];
+            if (item){
+                item.item_num++
+            } else {
+                state.addCartData.push(data);
+            }
+        } else {
+            state.addCartData.push(data);
+        }
 
-        state.addCartData.push(data);
+        // state.addCartData.push(data);
 
         console.log('Mutation say: ',state.addCartData);
     }
