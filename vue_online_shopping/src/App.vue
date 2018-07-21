@@ -3,12 +3,13 @@
     <!-- Rendered content  -->
     <router-view></router-view>
     <!-- Nav at the bottom -->
-    <NavBottom/>
+    <NavBottom v-show="showNav"></NavBottom>
   </div>
 </template>
 
 <script>
 import NavBottom from './components/NavBottom'
+import {mapGetters} from 'vuex'
 export default {
   name: 'App',
   data() {
@@ -19,8 +20,12 @@ export default {
 
   components: {
     NavBottom
-  }
+  },
+
+  computed: mapGetters(['showNav'])
+  // computed: mapGetters(['shownav'])
 }
+
 </script>
 
 <style>

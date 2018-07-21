@@ -38,38 +38,17 @@ var getters = {
         return state.addCartData.reduce(function(amount, item){
             return amount + item.product_uprice * item.item_num;
         },0);
+    },
+
+    //For show navigater on the buttom
+    showNav(state){
+        return state.isShowNav;
     }
 };
 
 //Manage mutation
 const actions = {
-    //Actions for exercise
     
-    action1 : ({commit, state}) => { 
-        commit('mutationMethod1')
-    },
-
-    add : ({commit, state}) => {
-        commit('add');
-        state.isShowNav = true;
-    },
-
-    minus: ({commit, state}) => {
-        state.isShowNav=false;
-        if(state.count > 2) {
-            commit('minus')
-        }else{
-            state.isShowNav = true;
-        }
-    },
-
-    hideNav: ({commit, state}) => {
-        commit ('hideNav')
-    },
-
-    showNav:  ({commit, state}) => {
-        commit ('showNav')
-    },
 
     //Actions for cart management
     
@@ -88,8 +67,40 @@ const actions = {
     },
     delAnItem: ({commit, state}, product_id) => {
         commit('delAnItem', product_id);
-    }
+    },
 
+    //Actions for show buttom navigator
+    hideNav: ({commit, state}) => {
+        // debugger;
+        commit ('hideNav')
+    },
+
+    showNav:  ({commit, state}) => {
+        commit ('showNav')
+    },
+
+
+    //Actions for exercise
+
+    action1 : ({commit, state}) => { 
+        commit('mutationMethod1')
+    },
+
+    add : ({commit, state}) => {
+        commit('add');
+        state.isShowNav = true;
+    },
+
+    minus: ({commit, state}) => {
+        state.isShowNav=false;
+        if(state.count > 2) {
+            commit('minus')
+        }else{
+            state.isShowNav = true;
+        }
+    },
+
+    
 
 
 }
@@ -137,6 +148,16 @@ const mutations = {
         }
         state.addCartData = curCart;
     },
+
+    //Mutations for buttom navigater
+    hideNav: (state) => {
+        state.isShowNav = false;
+    },
+
+    showNav: (state) => {
+        state.isShowNav = true;
+    },
+
     //Mutations for exercise
     mutationMethod1 : (state) => {
         state.flag = 'mutations flag'
@@ -150,13 +171,7 @@ const mutations = {
         state.count--;        
     },
 
-    hideNav: (state) => {
-        state.isShowNav = true;
-    },
-
-    showNav: (state) => {
-        state.isShowNav = false;
-    },
+    
 
     
     
