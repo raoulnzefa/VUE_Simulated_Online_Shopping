@@ -1,10 +1,15 @@
 <template>
-    <div>
-        Mine
+    <div class="user_i">
+       
+       <MineHeaderView></MineHeaderView> 
+       <MineMainView></MineMainView> 
     </div>
 </template>
 
 <script>
+
+import MineHeaderView from './MineHeader.vue';
+import MineMainView from './MineMain.vue';
 
 export default {
     data() {
@@ -13,7 +18,13 @@ export default {
         }
     },
     components: {
+        MineHeaderView,
+        MineMainView
         
     }
 }
 </script>
+
+<style >
+    @import '../assets/css/mine.css';
+</style>

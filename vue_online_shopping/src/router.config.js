@@ -6,8 +6,12 @@ import  Cart from './components/Carter'
 import  Mine from './components/Mine'
 import  ItemtDetail from './components/ItemDetail'
 import  SearchMain from './components/SearchMain'
+import Login from './components/Login'
+
+//These two is only for learning vuex
 import  VuexTest1 from './components/VuexTest1'
 import  VuexTest2 from './components/VuexTest2'
+
 
 export default[
     {
@@ -50,6 +54,16 @@ export default[
         component: SearchMain
     },
     {
+        path : '/category/:id',
+        component: Category
+    },
+    {
+        path : '/login',
+        component: Login
+    },
+    
+    
+    {
         path : '/vuexTest1',
         component: VuexTest1
     },
@@ -58,8 +72,5 @@ export default[
         path : '/vuexTest2',
         component: VuexTest2
     },
-    {
-        path : '/category/:id',
-        component: Category
-    }
+    
 ]
