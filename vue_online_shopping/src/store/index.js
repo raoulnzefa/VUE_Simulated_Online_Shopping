@@ -31,7 +31,7 @@ var getters = {
     //For cart
     cartData(state){
         // cache:false;
-        return state.addCartData;
+        return state.addCartData
     }
 };
 
@@ -66,14 +66,69 @@ const actions = {
 
     //Actions for cart management
     
+    //Add an item into cart
     cartAdd : ({commit, state}, data) => {
             commit('cartAdd', data)
+    },
+
+    //Add one on the number of an item in cart
+    numAddOne: ({commit, state}, product_id) =>{
+        commit('numAddOne', product_id)
+    },
+    //Minus one on the number of an item in cart
+    numMinusOne: ({commit, state}, product_id) =>{
+        commit('numMinusOne', product_id)
+    },
+    delAnItem: ({commit, state}, product_id) => {
+        commit('delAnItem', product_id);
     }
+
+
 
 }
 
 //Changing state
 const mutations = {
+    
+    //Mutations for Cart management
+    cartAdd:(state,data) => {
+        console.log('length of AddCartData: ',state.addCartData.length)
+        if (state.addCartData.length.length > 0){
+            let item = state.addCartData.filter(function(item){return item.product_id == data.product_id})[0];
+            if (item){
+                item.item_num++
+            } else {
+                state.addCartData.push(data);
+            }
+        } else {
+            state.addCartData.push(data);
+        }
+
+        // state.addCartData.push(data);
+
+        console.log('Mutation say: ',state.addCartData);
+    },
+
+    numAddOne: (state, product_id) => {
+        let curItem = state.addCartData.filter(function(item){return item.product_id = product_id})
+        curItem[0].item_num++;
+    },
+
+    numMinusOne: (state, product_id) => {
+        let curItem = state.addCartData.filter(function(item){return item.product_id = product_id})
+        curItem[0].item_num--;
+    },
+
+    delAnItem: (state, product_id) => {
+        let curCart = state.addCartData;
+        for (let i=0; i<curCart.length; i++){
+            if (curCart[i].product_id == product_id){
+                curCart.splice(i,1);
+                break;
+            }
+        }
+        state.addCartData = curCart;
+    },
     //Mutations for exercise
     mutationMethod1 : (state) => {
         state.flag = 'mutations flag'
@@ -96,24 +151,7 @@ const mutations = {
     },
 
     
-    //Mutations for Cartmanagement
-    cartAdd:(state,data) => {
-        console.log('length of AddCartData: ',state.addCartData.length)
-        if (state.addCartData.length.length > 0){
-            let item = state.addCartData.filter(function(item){return item.product_id == data.product_id})[0];
-            if (item){
-                item.item_num++
-            } else {
-                state.addCartData.push(data);
-            }
-        } else {
-            state.addCartData.push(data);
-        }
-
-        // state.addCartData.push(data);
-
-        console.log('Mutation say: ',state.addCartData);
-    }
+    
 
 
 }

@@ -1,8 +1,8 @@
 <template>
 		<main class="cart_box">
 		    <div class="cart_tip clearfix" >
-		        <span>登录后可同步电脑与手机购物车中的商品</span>
-		        <a href="#" class="login" >登录</a>
+		        <span>Synchrise with computer after login</span>
+		        <a href="#" class="login" >Login</a>
 		    </div>
 		    <div class="cart_content clearfix" v-for="item in cartData" >
 		        <div class="cart_shop clearfix">
@@ -16,7 +16,7 @@
 		                <span class="shop_name">{{item.shop_name}}</span>
 		            </div>
 		            <div class="cart_free clearfix">
-		                <span class="free_tip">优惠券></span>
+		                <span class="free_tip">Coupons></span>
 		            </div>
 		        </div>
 		        <div class="cart_item">
@@ -35,15 +35,15 @@
 		                    </a>
 		                </div>
 		                <div class="cart_weight">
-		                    <i class="my_weigth">重量:0.45kg</i>
-		                    <span class="my_color">颜色:AT800/16</span>
+		                    <i class="my_weigth">weight:0.45kg</i>
+		                    <span class="my_color">Color: AT800/16</span>
 		                </div>
 		                <div class="cart_product_sell">
 		                    <span class="product_money">￥<strong class="real_money">{{item.product_uprice}}</strong>.00</span>
 		                    <div class="cart_add clearfix">
-		                        <span class="my_add" @click="goodIncrement(item.product_id)">+</span>
-		                        <input type="tel" class="my_count" v-model="item.goods_num">
-		                        <span class="my_jian" @click="goodDecrement(item.product_id)">-</span>
+		                        <span class="my_add" @click="numAddOne(item.product_id)">+</span>
+		                        <input type="tel" class="my_count" v-model="item.item_num">
+		                        <span class="my_jian" @click="numMinusOne(item.product_id)">-</span>
 		                    </div>
 		                </div>
 		                <div class="cart_del clearfix" @click="showPop(item.product_id)">
@@ -60,13 +60,13 @@
 		    <div class="pop" v-show="popStatus">
 		    <div class="pop_box">
 		        <div class="del_info">
-		            确定要删除该商品吗？ 
+		           Are you sure to delete the item？ 
 		        </div>
 		        <div class="del_cancel" @click="delCancel">
-		            取消
+		            Cancel
 		        </div>
 		        <div class="del_ok" @click="delOk">
-		            确定
+		            Ok
 		        </div>
 		    </div>
 		</div>
@@ -76,12 +76,13 @@
 
 <script>
 // import {mapGetters, mapActions} from 'vuex';
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
     return {
         popStatus: false,
+        curId: null
     };
   },
 
@@ -103,14 +104,26 @@ export default {
       // console.log('cart data: ', cartData);
       // console.log(multiple);
     },
+    showPop(pruduct_id){
+        this.popStatus =  true;
+        this.curId =  pruduct_id;
+
+    },
+
+    ...mapActions(['numAddOne','numMinusOne', 'delAnItem']),
     goodIncrement(){
 
     },
     goodDecrement(){
 
     },
-    delCancel(){},
-    delOk(){}
+    delCancel(){
+        this.popStatus =false;
+    },
+    delOk(){
+        this.popStatus = false;
+        this.delAnItem(this.curId);
+    }
 
   }
 };
