@@ -32,12 +32,19 @@ var getters = {
     cartData(state){
         // cache:false;
         return state.addCartData
+    },
+
+    cartTotal(state){
+        return state.addCartData.reduce(function(amount, item){
+            return amount + item.product_uprice * item.item_num;
+        },0);
     }
 };
 
 //Manage mutation
 const actions = {
     //Actions for exercise
+    
     action1 : ({commit, state}) => { 
         commit('mutationMethod1')
     },
@@ -117,6 +124,7 @@ const mutations = {
     numMinusOne: (state, product_id) => {
         let curItem = state.addCartData.filter(function(item){return item.product_id = product_id})
         curItem[0].item_num--;
+        
     },
 
     delAnItem: (state, product_id) => {
