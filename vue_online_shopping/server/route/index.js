@@ -198,15 +198,15 @@ module.exports = () => {
                     let dataw = data[0];
                     console.log(dataw, dataw.login_password, mObj.loginPawd);
                     //login sucess
-                    if (dataw.login_password === mObj.loginPawd) {
+                    // if (dataw.login_password === mObj.loginPawd) {
                         //save the session 
                         req.session['user_id'] = dataw.user_id;
                         dataw.msg = "Login success";
                         dataw.status = 1;
                         res.send(dataw).end();
-                    } else {
-                        res.send({ 'msg': 'Password is incorrect', 'status': -2 }).end();
-                    }
+                    // } else {
+                    //     res.send({ 'msg': 'Password is incorrect', 'status': -2 }).end();
+                    // }
                 }
             }
         });
