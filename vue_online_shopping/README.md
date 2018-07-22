@@ -1,6 +1,6 @@
-# online_shopping
+# An simulating JD (jd.com) mobile app of online_shopping
 
-> A simulated online shopping by VUE
+> The project is developed by VUE
 
 ## Build Setup
 
@@ -18,4 +18,9 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+#How to run
+
+Step 1. If you have node 'serve', then come to step two. Install
+        serve by command 'npm install -g serve'
+Step 2. Run 'serve dist'
+Step 3. In browser, open 'localhost:5000'
